@@ -1,10 +1,26 @@
+// import Button from "./components/Button";
+// import Icon from "./components/Icon";
+// import Pin from "./components/Pin";
+import NavBar from "./components/Landing/NavBar";
+import BarNav from "./components/Landing/BarNav";
+import Landing from "./pages/Landing";
+import Page from "./pages/Page";
+import { useState } from "react";
 function App() {
+  const [page, setPage] = useState("Resume");
+  function handleClick(page: string) {
+    setPage(page);
+  }
 
   return (
-    <div className="text-center">
-      <header className="flex min-h-screen flex-col items-center justify-center gap-2 bg-[#17c666] pb-8 text-white">
-        
-      </header>
+    <div className="overflow-x-hidden">
+      <Landing
+        NavbarTop={<NavBar handleClick={handleClick} pagestate={page}></NavBar>}
+        NavbarBottom={
+          <BarNav handleClick={handleClick} pagestate={page}></BarNav>
+        }
+      ></Landing>
+      <Page page={page}></Page>
     </div>
   );
 }
