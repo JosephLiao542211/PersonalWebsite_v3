@@ -23,7 +23,7 @@ const Typewriter = ({
   });
 
   return (
-    <div className="text-center text-5xl font-bold">
+    <div className=" text-center">
       <motion.div ref={scope} className="inline">
         {wordsArray.map((word, i) => {
           return (
@@ -44,7 +44,7 @@ const Typewriter = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-        className="ml-1 inline-block h-10 w-1 rounded-sm bg-blue-500"
+        className="ml-1 inline-block h-48 w-1 rounded-sm bg-blue-500"
       ></motion.span>
     </div>
   );

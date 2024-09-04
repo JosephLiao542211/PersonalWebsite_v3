@@ -20,6 +20,7 @@ function App() {
         NavbarBottom={
           <BarNav handleClick={handleClick} pagestate={page}></BarNav>
         }
+        page={page}
       ></Landing>
       <Page page={page}></Page>
       <Footer></Footer>

@@ -7,7 +7,7 @@ const DynamicBackground: React.FC = () => {
   const cols = 20;
 
   return (
-    <div className="absolute z-0 h-fit bg-black py-24">
+    <div className="absolute z-0 h-full overflow-y-hidden bg-black py-24">
       <div
         className=" grid "
         style={{
