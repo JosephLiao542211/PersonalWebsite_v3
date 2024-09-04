@@ -9,7 +9,7 @@ type BarNavProps = {
 const BarNav: React.FC<BarNavProps> = ({ handleClick, pagestate }) => {
   return (
     <div className="relative top-48 m-8 justify-center text-center  ">
-      <div className="flex items-center  space-x-24 py-96">
+      <div className="flex items-center  space-x-24">
         {/* {pagestate === "ART" && <div>AHHHHHH</div>} */}
         <span
           className={`cursor-pointer  transition-all  ${

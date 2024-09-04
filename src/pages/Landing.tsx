@@ -42,7 +42,7 @@ const Landing: React.FC<LayoutWithNavbarsProps> = ({
               words={[
                 {
                   text: "JOSEPH LIAO",
-                  className: `font-bigger text-[20em] leading-[1.1] ${getTextColorClass()}`,
+                  className: `font-bigger text-[20em] leading-[1.1] transition-all ${getTextColorClass()}`,
                 },
               ]}
             ></Typewriter>

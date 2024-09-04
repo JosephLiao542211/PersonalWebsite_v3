@@ -58,10 +58,10 @@ const CardItems = [
 
 function Technology() {
   return (
-    <div className="relative bg-black ">
+    <div className="relative h-full bg-black ">
       <DynamicBackground></DynamicBackground>
-      <div className="relative mx-[6.5%] flex h-full items-center justify-center overflow-x-hidden align-middle">
-        <div className="flex flex-wrap justify-around gap-12">
+      <div className="relative mx-[6.5%] flex h-full items-center justify-center overflow-x-hidden pb-[5%] align-middle">
+        <div className="flex flex-wrap justify-evenly gap-12">
           {CardItems.map((item, index) => (
             <Card
               title={item.title}
