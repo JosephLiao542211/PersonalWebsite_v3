@@ -35,7 +35,7 @@ const Landing: React.FC<LayoutWithNavbarsProps> = ({
       <div className="relative z-10 flex h-screen items-center justify-center text-center">
         <div className="absolute">
           <div className="flex-col justify-center">
-            <div className="font-ztbro_i text-5xl tracking-[0.35em] text-white">
+            <div className="font-ztbro_i text-[2.5rem] tracking-[0.3em] text-white">
               HELLO I'M
             </div>
             <Typewriter
