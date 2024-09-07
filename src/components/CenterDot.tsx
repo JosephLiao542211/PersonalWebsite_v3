@@ -23,16 +23,17 @@ const CenterDot: React.FC = () => {
           const deltaY = mouseY - center.y;
 
           // Calculate the angle in degrees
-          const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-
-          // Update the line style to point towards the cursor
-          lineRef.current.style.transform = `rotate(${angle}deg)`;
-          oppositeLineRef.current.style.transform = `rotate(${angle + 180}deg)`;
 
           // Set the line width based on distance, extending symmetrically
           const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-          const lineLength = Math.max(2000 / Math.max(distance + 1, 76), 12); // Max width 400px
+
           if (distance < 800) {
+            const lineLength = Math.max(2000 / Math.max(distance + 1, 76), 12); // Max width 400px
+            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+            // Update the line style to point towards the cursor
+            lineRef.current.style.transform = `rotate(${angle}deg)`;
+            oppositeLineRef.current.style.transform = `rotate(${angle + 180}deg)`;
             lineRef.current.style.width = `${lineLength}px`;
             oppositeLineRef.current.style.width = `${lineLength}px`;
           } else {

@@ -1,32 +1,57 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CenterDot from "./CenterDot"; // Adjust the import path as needed
 
 const DynamicBackground: React.FC = () => {
+  const [dotCount, setDotCount] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // Define the number of columns for the grid
   const cols = 20; // Adjust the number of columns as needed
+  const rowHeight = 50; // Height of each row in pixels
 
-  // Calculate the total number of items based on a reasonable assumption of rows needed
-  const totalItems = cols * Math.ceil(window.innerHeight / 30); // Adjust 50 to your row height
+  useEffect(() => {
+    const updateDotCount = () => {
+      if (containerRef.current) {
+        const containerHeight = containerRef.current.clientHeight; // Get the height of the container
+        const rows = Math.ceil(containerHeight / (rowHeight * 1.1)); // Calculate the number of rows
+        setDotCount(cols * rows); // Set the total number of dots needed
+      }
+    };
+
+    // Initial calculation
+    updateDotCount();
+
+    // Recalculate on window resize
+    window.addEventListener("resize", updateDotCount);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener("resize", updateDotCount);
+    };
+  }, [cols, rowHeight]);
 
   return (
-    <div className="absolute z-0 h-full overflow-y-hidden bg-black py-24">
+    <div
+      ref={containerRef}
+      className="absolute z-0 h-full w-full overflow-hidden bg-black py-24"
+    >
       <div
         className="grid"
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${cols}, 1fr)`, // Fixed number of columns
-          gridAutoRows: "50px", // Set each row height; adjust as needed
+          gridAutoRows: `${rowHeight}px`, // Set each row height; adjust as needed
           gap: "5px", // Adjust spacing between dots as needed
-          // height: "150%", // Full viewport height
           width: "100vw", // Full viewport width
+          // Full viewport height to fill the screen
           maskImage:
-            "radial-gradient(circle, white 30%, rgba(255, 255, 255, 0) 90%)", // Stronger edge mask
+            "linear-gradient(to right, transparent, white 30%, white 70%, transparent)", // Linear gradient from left and right
           WebkitMaskImage:
-            "radial-gradient(circle, white 30%, rgba(255, 255, 255, 0) 90%)", // For WebKit browsers
+            "linear-gradient(to right, transparent, white 30%, white 70%, transparent)", // For WebKit browsers
         }}
       >
-        {/* Render enough CenterDot components to fill the grid */}
-        {Array.from({ length: totalItems }).map((_, index) => (
+        {/* Render the dynamically calculated number of CenterDot components */}
+        {Array.from({ length: dotCount }).map((_, index) => (
           <CenterDot key={index} />
         ))}
       </div>
