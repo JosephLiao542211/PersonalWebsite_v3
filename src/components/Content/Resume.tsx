@@ -3,6 +3,7 @@ import CenterDot from "../CenterDot";
 import DynamicBackground from "../DynamicBackground";
 import Timeline from "../Timeline";
 import Hobbies from "../Hobbies";
+import CircleLinks from "../CircleLinks";
 const timelineItems = [
   {
     title: "Frontend Developer at XYZ Corp",
@@ -25,29 +26,37 @@ const timelineItems = [
 function Resume() {
   return (
     <div className="relative bg-black pb-[5%]">
-      <div className="flex h-auto flex-col md:h-[80vh] md:flex-row">
+      <div className="flex h-full flex-col md:h-[80vh] md:flex-row">
         <img
-          className="w-full flex-1 object-cover md:w-5/12"
+          className="w-full object-cover md:w-5/12"
           src="queensu.png"
           alt="Placeholder"
         />
 
-        <div className="flex-grow-2 flex p-[5%] px-[10%]">
-          <div>
-            <h1>this is text</h1>
-            <p>
-              em Ipsum è un testo segnaposto utilizzato nel settore della
-              tipografia e della stampa. Lorem Ipsum è considerato il testo
-              segnaposto standard sin dal sedicesimo secolo, quando un anonimo
-              tipografo prese una cassetta di caratteri e li assemblò per
-              preparare un testo campione. È sopravvissuto non solo a più di
-              cinque secoli, ma anche al passaggio alla videoimpaginazione,
-              pervenendoci sostanzialmente inalterato. Fu reso popolare, negli
-              anni ’60, con la diffusione dei fogli di caratte
-            </p>
-          </div>
+        <div className="flex h-full flex-col px-[5%] pr-[10%]">
+          <h1 className="pt-[2%] font-bigger text-[8em] leading-[1em] tracking-[0.05em] text-white">
+            QUEENS UNIVERSITY
+          </h1>
+          <h1 className="font-ztbro_i text-[2em] uppercase leading-[2em] tracking-[0.3em] text-red-500">
+            Bachelor in Computing (Hons)
+          </h1>
+          <p className="pt-[5%] font-ztbro text-[1.5em] leading-[2em] tracking-[0.2em] text-gray-300">
+            Attending Queen's University for my Bachelor in Computing (Hons)
+            with a specialization in Fundamental Computation was a
+            transformative journey. I gained a strong foundation in
+            computational theory and honed my problem-solving skills.
+            Collaborating with talented peers, I explored innovative solutions
+            and developed a passion for pushing the boundaries of technology.
+          </p>
+
+          {/* Spacer div to push CircleLinks to the bottom and take remaining space */}
+          <div className="flex-grow"></div>
+
+          {/* CircleLinks component taking remaining space and sitting at the bottom */}
+          <CircleLinks></CircleLinks>
         </div>
       </div>
+
       <div className="mx-[15%] h-screen py-[10%] align-middle">
         <Timeline items={timelineItems}></Timeline>
       </div>

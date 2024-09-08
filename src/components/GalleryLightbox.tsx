@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import EmblaCarousel from "./EmbalaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import "./embala.css";
@@ -18,6 +18,7 @@ const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, lb }) => {
     "queensu.png",
     "image 7.jpg",
   ]);
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     switch (lb) {
@@ -32,19 +33,37 @@ const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, lb }) => {
         setImages(["image 7.jpg"]);
         break;
     }
-  }, [lb]); // Dependency array to trigger effect when lb changes
+  }, [lb]);
 
-  if (!isOpen) return null; // This ensures the lightbox doesn't render when isOpen is false
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        lightboxRef.current &&
+        !lightboxRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-md">
-      <button
-        onClick={onClose}
-        className="relative text-white hover:text-gray-700"
-      >
-        Close
-      </button>
-      <EmblaCarousel imageURL={images} slides={SLIDES} options={OPTIONS} />
+      <div ref={lightboxRef} className="relative flex flex-col items-center">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 text-white hover:text-gray-700"
+        >
+          Close
+        </button>
+        <EmblaCarousel imageURL={images} slides={SLIDES} options={OPTIONS} />
+      </div>
     </div>
   );
 };
