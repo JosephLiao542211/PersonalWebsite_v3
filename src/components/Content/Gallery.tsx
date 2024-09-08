@@ -1,10 +1,7 @@
-import CenterDot from "../CenterDot";
-import DynamicBackground from "../DynamicBackground";
 import GalleryCard from "../GalleryCard";
-import Timeline from "../Timeline";
+
 import { SetStateAction, useState } from "react";
 
-import { EmblaOptionsType } from "embla-carousel";
 import Lightbox from "../GalleryLightbox";
 
 function Gallery() {
@@ -45,10 +42,7 @@ function Gallery() {
       </div>
 
       <Lightbox isOpen={isLightboxOpen} onClose={closeLightbox}>
-        <div className="text-center">
-          <h2 className="text-lg font-semibold">Lightbox Content</h2>
-          <p className="mt-2 text-gray-600">{lbcontent}</p>
-        </div>
+        {lbcontent}
       </Lightbox>
     </div>
   );

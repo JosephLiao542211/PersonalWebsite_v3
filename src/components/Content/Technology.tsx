@@ -28,6 +28,11 @@ const CardItems = [
     date: "Jun 2019 - Dec 2020",
     description: "Assisted in the development and maintenance of web apps.",
   },
+  {
+    title: "Junior Developer at ABC Inc",
+    date: "Jun 2019 - Dec 2020",
+    description: "Assisted in the development and maintenance of web apps.",
+  },
 ];
 
 function Technology() {
