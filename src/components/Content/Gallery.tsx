@@ -9,8 +9,9 @@ function Gallery() {
   const [lbcontent, setlb] = useState("Fine");
 
   const openLightbox = (lb: SetStateAction<string>) => {
+    setlb(lb);
     setIsLightboxOpen(true);
-    setlb(lb); // Call setlb with a string parameter
+    // Call setlb with a string parameter
   };
 
   const closeLightbox = () => {
@@ -20,6 +21,7 @@ function Gallery() {
 
   return (
     <div className="relative bg-black">
+      {lbcontent}
       <div className="left-1/2 h-full justify-center space-x-5 overflow-x-hidden p-[5%] md:flex  md:h-screen">
         <GalleryCard
           onclick={openLightbox}
@@ -41,9 +43,11 @@ function Gallery() {
         ></GalleryCard>
       </div>
 
-      <Lightbox isOpen={isLightboxOpen} onClose={closeLightbox}>
-        {lbcontent}
-      </Lightbox>
+      <Lightbox
+        lb={lbcontent}
+        isOpen={isLightboxOpen}
+        onClose={closeLightbox}
+      ></Lightbox>
     </div>
   );
 }
