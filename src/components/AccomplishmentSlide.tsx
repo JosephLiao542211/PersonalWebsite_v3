@@ -14,7 +14,7 @@ const AccomplishmentSlide: React.FC<AcItem> = ({
   description,
 }) => {
   return (
-    <div className="relative z-10 flex h-full justify-between bg-blue-600 align-middle">
+    <div className="relative z-10 flex h-screen justify-between bg-blue-600 align-middle">
       <div className="flex-col p-[10%] py-[5%]">
         <div className="min-w-[250px]">
           <div className="relative flex items-center"></div>
@@ -26,7 +26,7 @@ const AccomplishmentSlide: React.FC<AcItem> = ({
         </div>
       </div>
       <div>
-        <img className="h-full object-cover" src="image 7.jpg"></img>
+        <img className="h-full object-contain" src="image 7.jpg"></img>
       </div>
     </div>
   );

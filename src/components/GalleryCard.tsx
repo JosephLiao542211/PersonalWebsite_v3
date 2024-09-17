@@ -23,7 +23,7 @@ const GalleryCard: React.FC<CardProps> = ({
       {/* Overlay using pseudo-element */}
       <div className="absolute inset-0 z-0 bg-green-900 bg-opacity-50 backdrop-blur-sm transition-opacity group-hover:opacity-60"></div>
 
-      <div className="relative top-1/4 z-10 px-[15%] text-center">
+      <div className="relative top-1/4 z-10 px-[2%] text-center">
         <div className="text-center font-bigger text-[9em] uppercase leading-[0.9] tracking-wide text-white">
           {title}
         </div>

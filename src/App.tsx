@@ -23,7 +23,6 @@ function App() {
         page={page}
       ></Landing>
       <Page page={page}></Page>
-      <Footer></Footer>
     </div>
   );
 }

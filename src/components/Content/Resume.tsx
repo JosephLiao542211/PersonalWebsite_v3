@@ -6,18 +6,21 @@ import Hobbies from "../Hobbies";
 import CircleLinks from "../CircleLinks";
 const timelineItems = [
   {
-    title: "Frontend Developer at XYZ Corp",
+    title: "Local Reach",
     date: "Jan 2021 - Present",
+    position: "Co-Founder & Lead Developer",
     description:
-      "Developed modern web applications using React and TypeScript.",
+      "Co-founded a computer vision startup to help bars and restaurants reclaim ad space using AI commercial detection. Raised $60,000+ in seed funding and $3,000+ in revenue within 5 months. Developed a 96% accuracy ad detection algorithm with TensorFlow, OpenCV, and Python, and designed custom circuitry deployed at 5 restaurants. Completed incubator programs QYourVenture and Startup Survivor, now part of League of Innovators (Lab 13).",
   },
   {
-    title: "Junior Developer at ABC Inc",
+    title: "Elevate Intergrated Solutions",
     date: "Jun 2019 - Dec 2020",
+    position: "UI/UX Intern",
     description: "Assisted in the development and maintenance of web apps.",
   },
   {
-    title: "Intern at DEF Ltd",
+    title: "Code Ninjas",
+    position: "Marketing Coordinator",
     date: "Jan 2019 - May 2019",
     description: "Worked on small features and bug fixes for internal tools.",
   },
@@ -25,7 +28,7 @@ const timelineItems = [
 
 function Resume() {
   return (
-    <div className="relative bg-black pb-[5%]">
+    <div className="relative h-full w-full bg-black pb-[5%]">
       <div className="flex h-full flex-col md:h-[80vh] md:flex-row">
         <img
           className="w-full object-cover md:w-5/12"
@@ -33,14 +36,14 @@ function Resume() {
           alt="Placeholder"
         />
 
-        <div className="flex h-full flex-col px-[5%] pr-[10%]">
-          <h1 className="pt-[2%] font-bigger text-[8em] leading-[1em] tracking-[0.05em] text-white">
+        <div className="flex h-full flex-col overflow-hidden px-[5%] pr-[10%]">
+          <h1 className="pt-[2%] font-bigger text-[7em] leading-[1em] tracking-[0.05em] text-white md:text-[7.8vw]">
             QUEENS UNIVERSITY
           </h1>
           <h1 className="font-ztbro_i text-[2em] uppercase leading-[2em] tracking-[0.3em] text-red-500">
             Bachelor in Computing (Hons)
           </h1>
-          <p className="pt-[5%] font-ztbro text-[1.5em] leading-[2em] tracking-[0.2em] text-gray-300">
+          <p className="pt-[2%] font-ztbro text-[1.3rem] leading-[2rem] tracking-[0em] text-gray-300">
             Attending Queen's University for my Bachelor in Computing (Hons)
             with a specialization in Fundamental Computation was a
             transformative journey. I gained a strong foundation in
@@ -57,10 +60,11 @@ function Resume() {
         </div>
       </div>
 
-      <div className="mx-[15%] h-screen py-[10%] align-middle">
+      <div className="h-fit py-[7%] text-center align-middle md:mx-[10%] md:text-left">
         <Timeline items={timelineItems}></Timeline>
       </div>
-      <div className=" bg-cyan-400 md:h-[80vh] md:flex-row">
+
+      <div className=" bg-cyan-400 md:h-full md:flex-row">
         <AccomplishmentSlider></AccomplishmentSlider>
       </div>
       <div className=" bg-cyan-400 md:h-[80vh] md:flex-row">
