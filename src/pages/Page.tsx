@@ -1,7 +1,7 @@
 import Gallery from "@/components/Content/Gallery";
 import Resume from "@/components/Content/Resume";
 import Technology from "@/components/Content/Technology";
-import DynamicBackground from "@/components/DynamicBackground";
+
 type PageProps = {
   page: string;
 };

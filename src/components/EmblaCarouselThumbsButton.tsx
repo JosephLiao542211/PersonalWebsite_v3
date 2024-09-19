@@ -8,7 +8,7 @@ type PropType = {
 };
 
 export const Thumb: React.FC<PropType> = (props) => {
-  const { selected, index, onClick, imageURL } = props;
+  const { selected, onClick, imageURL } = props;
 
   return (
     <div

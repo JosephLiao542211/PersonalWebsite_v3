@@ -41,7 +41,7 @@ function Technology() {
       <DynamicBackground></DynamicBackground>
       <div className="relative mx-[6.5%] flex h-full items-center justify-center overflow-x-hidden py-[5%] align-middle">
         <div className="flex flex-wrap justify-around gap-12">
-          {CardItems.map((item, index) => (
+          {CardItems.map((item) => (
             <Card
               title={item.title}
               link={item.date}

@@ -1,9 +1,7 @@
 import React from "react";
 import Background from "@/components/Landing/Background";
 import { ReactElement } from "react";
-import NavBar from "@/components/Landing/NavBar";
 import Typewriter from "@/components/Typewriter";
-import BarNav from "@/components/Landing/BarNav";
 
 interface LayoutWithNavbarsProps {
   NavbarTop: ReactElement;

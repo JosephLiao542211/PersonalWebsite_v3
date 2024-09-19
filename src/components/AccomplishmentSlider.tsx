@@ -1,4 +1,3 @@
-import React from "react";
 import AccomplishmentSlide from "./AccomplishmentSlide";
 
 function AccomplishmentSlider() {

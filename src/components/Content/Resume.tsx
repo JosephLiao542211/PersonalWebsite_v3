@@ -1,6 +1,5 @@
 import AccomplishmentSlider from "../AccomplishmentSlider";
-import CenterDot from "../CenterDot";
-import DynamicBackground from "../DynamicBackground";
+
 import Timeline from "../Timeline";
 import Hobbies from "../Hobbies";
 import CircleLinks from "../CircleLinks";
