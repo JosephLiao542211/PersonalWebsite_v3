@@ -26,25 +26,29 @@ const Landing: React.FC<LayoutWithNavbarsProps> = ({
         return "text-red-500"; // Default color in case of an unrecognized page
     }
   };
+
   return (
-    <div className="h-full ">
+    <div className="h-full">
       <Background></Background>
       {NavbarTop}
       <div className="relative z-10 flex h-screen items-center justify-center text-center">
         <div className="absolute">
-          <div className="flex-col justify-center">
-            <div className="font-ztbro_i text-[2.5rem] tracking-[0.3em] text-white">
+          <div className="flex flex-col justify-center">
+            {/* Mobile responsive text size */}
+            <div className="font-ztbro_i text-[2.5rem] tracking-[0.3em] text-white md:text-[4rem]">
               HELLO I'M
             </div>
             <Typewriter
               words={[
                 {
                   text: "JOSEPH LIAO",
-                  className: `font-bigger text-[20em] leading-[1.1] transition-all ${getTextColorClass()}`,
+                  className: `font-bigger text-[8rem] leading-[1.1] md:text-[10rem] lg:text-[20rem] transition-all ${getTextColorClass()}`,
                 },
               ]}
             ></Typewriter>
-            <div>chinese</div>
+            <div className="text-sm text-white md:text-lg lg:text-xl">
+              chinese
+            </div>
           </div>
         </div>
         {NavbarBottom}

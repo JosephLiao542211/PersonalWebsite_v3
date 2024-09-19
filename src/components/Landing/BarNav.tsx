@@ -7,24 +7,23 @@ type BarNavProps = {
 
 const BarNav: React.FC<BarNavProps> = ({ handleClick, pagestate }) => {
   return (
-    <div className="relative top-48 m-8 justify-center text-center  ">
-      <div className="flex items-center  space-x-24">
-        {/* {pagestate === "ART" && <div>AHHHHHH</div>} */}
+    <div className="relative top-48 m-4 justify-center text-center md:top-48 md:m-8">
+      <div className="flex flex-col items-center space-y-4 md:flex-row md:space-x-24 md:space-y-0">
         <span
-          className={`cursor-pointer  transition-all  ${
+          className={`cursor-pointer transition-all ${
             pagestate === "Project"
-              ? "font-ztbro text-6xl tracking-[0.2em] text-blue-500"
-              : "font-ztbro_i text-4xl  tracking-wide text-gray-500"
+              ? "font-ztbro text-4xl tracking-[0.2em] text-blue-500 md:text-6xl"
+              : "font-ztbro_i text-2xl tracking-wide text-gray-500 md:text-4xl"
           }`}
           onClick={() => handleClick("Project")}
         >
           PROJECTS
         </span>
         <span
-          className={`cursor-pointer transition-all   ${
+          className={`cursor-pointer transition-all ${
             pagestate === "Resume"
-              ? "font-ztbro text-6xl  tracking-[0.2em] text-red-500"
-              : "font-ztbro_i text-4xl tracking-wide text-gray-500"
+              ? "font-ztbro text-4xl tracking-[0.2em] text-red-500 md:text-6xl"
+              : "font-ztbro_i text-2xl tracking-wide text-gray-500 md:text-4xl"
           }`}
           onClick={() => handleClick("Resume")}
         >
@@ -33,8 +32,8 @@ const BarNav: React.FC<BarNavProps> = ({ handleClick, pagestate }) => {
         <span
           className={`cursor-pointer transition-all ${
             pagestate === "Gallery"
-              ? " font-ztbro text-6xl tracking-[0.2em] text-green-700"
-              : "font-ztbro_i text-4xl tracking-wide text-gray-500"
+              ? "font-ztbro text-4xl tracking-[0.2em] text-green-700 md:text-6xl"
+              : "font-ztbro_i text-2xl tracking-wide text-gray-500 md:text-4xl"
           }`}
           onClick={() => handleClick("Gallery")}
         >
@@ -44,4 +43,5 @@ const BarNav: React.FC<BarNavProps> = ({ handleClick, pagestate }) => {
     </div>
   );
 };
+
 export default BarNav;

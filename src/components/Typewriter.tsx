@@ -44,7 +44,7 @@ const Typewriter = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-        className="ml-1 inline-block h-48 w-1 rounded-sm bg-blue-500"
+        className="ml-1 inline-block h-[6rem] w-[2px] rounded-sm bg-white lg:h-[16rem]"
       ></motion.span>
     </div>
   );

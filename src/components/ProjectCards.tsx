@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ title, link, description }) => {
               src="image 7.jpg"
               className=" object-cover sm:h-full md:rounded-s-xl"
             >
-              <a href={link}></a>
+              {/* <a href={link}></a> */}
             </img>
           </div>
           <div className="p-[5%] md:w-3/5">
