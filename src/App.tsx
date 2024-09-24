@@ -6,6 +6,7 @@ import BarNav from "./components/Landing/BarNav";
 import Landing from "./pages/Landing";
 import Page from "./pages/Page";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [page, setPage] = useState("Resume");
@@ -23,6 +24,7 @@ function App() {
         page={page}
       ></Landing>
       <Page page={page}></Page>
+      <Footer></Footer>
     </div>
   );
 }

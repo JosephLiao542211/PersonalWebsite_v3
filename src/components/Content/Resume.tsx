@@ -1,5 +1,3 @@
-import AccomplishmentSlider from "../AccomplishmentSlider";
-
 import Timeline from "../Timeline";
 import Hobbies from "../Hobbies";
 import CircleLinks from "../CircleLinks";
@@ -63,10 +61,10 @@ function Resume() {
         <Timeline items={timelineItems}></Timeline>
       </div>
 
-      <div className=" bg-cyan-400 md:h-full md:flex-row">
+      {/* <div className=" bg-cyan-400 md:h-full md:flex-row">
         <AccomplishmentSlider></AccomplishmentSlider>
-      </div>
-      <div className=" bg-cyan-400 md:h-[80vh] md:flex-row">
+      </div> */}
+      <div className=" overflow-hidden md:h-[80vh]">
         <Hobbies></Hobbies>
       </div>
     </div>
